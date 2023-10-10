@@ -63,21 +63,18 @@ public class Kotik {
         this.weight = weight;
     }
 
-    public boolean eat(int ccal) {
+    public void eat(int ccal) {
         System.out.println("Котик ест");
         satiety = satiety + ccal;
-        return true;
     }
 
-    public boolean eat(int ccal, String food) {
+    public void eat(int ccal, String food) {
         System.out.println("Котик ест " + food);
         satiety = satiety + ccal;
-        return true;
     }
 
-    public boolean eat() {
+    public void eat() {
         eat(1, "icecream");
-        return true;
     }
 
     public boolean play() {
@@ -116,7 +113,7 @@ public class Kotik {
         }
     }
 
-    public List<String> liveAnotherDay() {
+    public String [] liveAnotherDay() {
         List<String> day = new ArrayList<>();
 
         for (int i = 0; i <= 23; i++) {
@@ -154,6 +151,6 @@ public class Kotik {
                     break;
             }
         }
-        return day;
+        return day.stream().toArray(String[]::new);
     }
 }
